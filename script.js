@@ -686,7 +686,7 @@
             modelTrash.setAttribute('gps-entity-place', `latitude: ${latitudeTrash}; longitude: ${longitudeTrash};`);
             modelTrash.setAttribute('gltf-model', 'models/dogParkTrash.gltf');
             // modelCU.setAttribute('gltf-model', 'models/dogParkParking.gltf');
-            modelTrash.setAttribute('scale', '40 40 40');
+            modelTrash.setAttribute('scale', '10 10 10');
                  //allows to rotate
             modelTrash.setAttribute('animation', 'property: rotation; to: 0 360 0; loop:true; dur: 4000; easing: linear');
             modelTrash.addEventListener('loaded', () => {
@@ -711,7 +711,7 @@
        
             sceneTrash.appendChild(modelTrash);
       console.log(modelHeight);
-            if (modelHeight < 20){
+            if (modelHeight < 25){
 modelTrash.remove();
             };
       ////////////////////
