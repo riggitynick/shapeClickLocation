@@ -664,6 +664,8 @@
       {location: {lat: 39.477062,  lng: -105.081663,},},
       {location: {lat: 39.476847,  lng: -105.081652,},},
       {location: {lat: 39.476857,  lng: -105.081657,},},
+      {location: {lat: 39.476720564669364,  lng: -105.08175373123294,},},
+     
       
                ];
                }
@@ -686,7 +688,7 @@
             modelTrash.setAttribute('gps-entity-place', `latitude: ${latitudeTrash}; longitude: ${longitudeTrash};`);
             modelTrash.setAttribute('gltf-model', 'models/dogParkTrash.gltf');
             // modelCU.setAttribute('gltf-model', 'models/dogParkParking.gltf');
-            modelTrash.setAttribute('scale', '10 10 10');
+            modelTrash.setAttribute('scale', '30 30 30');
                  //allows to rotate
             modelTrash.setAttribute('animation', 'property: rotation; to: 0 360 0; loop:true; dur: 4000; easing: linear');
             modelTrash.addEventListener('loaded', () => {
@@ -711,7 +713,7 @@
        
             sceneTrash.appendChild(modelTrash);
       console.log(modelHeight);
-            if (modelHeight < 23){
+            if (modelHeight < 23.6860){
 modelTrash.remove();
 count+=1;
             };
