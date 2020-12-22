@@ -711,8 +711,9 @@
        
             sceneTrash.appendChild(modelTrash);
       console.log(modelHeight);
-            if (modelHeight < 25){
+            if (modelHeight < 23){
 modelTrash.remove();
+count+=1;
             };
       ////////////////////
       
