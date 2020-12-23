@@ -665,7 +665,8 @@
       {location: {lat: 39.476847,  lng: -105.081652,},},
       {location: {lat: 39.476857,  lng: -105.081657,},},
       {location: {lat: 39.476720564669364,  lng: -105.08175373123294,},},
-     
+      {location: {lat: 39.745279808923684, lng: -104.83717304103573,},},
+      {location: {lat: 39.7449715488114,  lng: -104.83740178596193,},},
       
                ];
                }
@@ -713,10 +714,10 @@
        
             sceneTrash.appendChild(modelTrash);
       console.log(modelHeight);
-            if (modelHeight < 23.6860){
-modelTrash.remove();
-count+=1;
-            };
+//             if (modelHeight < 23.6860){
+// modelTrash.remove();
+// count+=1;
+//             };
       ////////////////////
       
       
