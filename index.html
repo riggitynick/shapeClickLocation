@@ -380,12 +380,12 @@ float: right;
 
 </a-entity>
 
-<a-box color="blue" gps-entity-place="latitude: 39.7449715488114; longitude: -104.83740178596193"  radius="5" change-color-on-hover="scale: 0 0 0" dynamic-body hoverable grabbable stretchable draggable droppable></a-sphere>
+<a-sphere color="blue" gps-entity-place="latitude: 39.7449715488114; longitude: -104.83740178596193"  radius="0.5" change-color-on-hover="scale: 0 0 0" dynamic-body hoverable grabbable stretchable draggable droppable></a-sphere>
 
 <a-box color="green" position="0 2 2" opacity="0.5" change-color-on-hover="scale: 0 0 0" dynamic-body></a-box>
 
 <!-- ACCESS CAMERA, ALLOW ROTATION AND USE GYROSCOPE IN PHONE -->
-<a-entity gps-camera rotation-reader look-controls="enabled: true; hmdEnabled: false; touchEnabled: true;" fov="47" near="0.5" far="9000" >
+<a-entity gps-camera rotation-reader look-controls="enabled: true; hmdEnabled: false; touchEnabled: false;" fov="47" near="0.5" far="9000" >
 
   <!-- <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left"></a-entity>
   <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>   
