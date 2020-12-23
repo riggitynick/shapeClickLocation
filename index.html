@@ -385,7 +385,7 @@ float: right;
 <a-box color="green" position="0 2 2" opacity="0.5" change-color-on-hover="scale: 0 0 0" dynamic-body></a-box>
 
 <!-- ACCESS CAMERA, ALLOW ROTATION AND USE GYROSCOPE IN PHONE -->
-<a-entity gps-camera rotation-reader look-controls="enabled: true; hmdEnabled: false; touchEnabled: false;" fov="47" near="0.5" far="9000" >
+<a-entity>
 
   <!-- <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left"></a-entity>
   <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>   
@@ -394,7 +394,7 @@ float: right;
   
   camera="active: true"         progressive-controls              cursor="rayOrigin: mouse"           position="0 2 2"      -->
 
-  <a-box progressive-controls color="blue" opacity="0"></a-box>
+  <a-sphere gps-camera rotation-reader look-controls="enabled: true; hmdEnabled: false; touchEnabled: false;" fov="47" near="0.5" far="9000" progressive-controls color="blue" opacity="0"></a-sphere>
 
 <!-- 
 <a-entity gps-camera rotation-reader geometry="primitive: box" aabb-collider="objects: a-scene" look-controls="enabled: true; hmdEnabled: false; touchEnabled: false;" position="0 2 0" cursor="rayOrigin: mouse" fov="47" far="1000"></a-entity>   -->
