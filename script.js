@@ -415,7 +415,7 @@
       
            
               window.onload = () => {navigator.geolocation.getCurrentPosition((position) => {
-                document.querySelector('a-sphere').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+                document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
               });
              }
             
