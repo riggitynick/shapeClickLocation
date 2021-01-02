@@ -753,7 +753,7 @@
             modelTrash.setAttribute('animation', 'property: rotation; to: 0 360 0; loop:true; dur: 4000; easing: linear');
             modelTrash.addEventListener('loaded', () => {
            window.dispatchEvent(new CustomEvent('gps-entity-place-loadedTrash'))
-           modelTrash.setAttribute('position', `0 ${modelHeight} -10;`);
+           modelTrash.setAttribute('position', `0 ${modelHeight} 0;`);
 
 
          
