@@ -1,38 +1,90 @@
+//require('aframe-physics-system');
+      
 
-          // SCRIPT FOR SCORING
+
+
+         // SCRIPT FOR SCORING
           AFRAME.registerComponent("points", {
          
             init: function() {
-             var button = document.getElementById("clickme"),
-             count = -0.5;
-              
+              var button = document.getElementById("clickme"), //can remove for more specificity
+              count = -0.5; //can remove for more specificity
+              //this is where the collision of other objects adds points
              this.el.addEventListener("click", () => { 
                  count +=0.5;
                  button.innerHTML = "Score: " + count;
                  
-
-
-                 document.querySelector('a-entity').addEventListener('collide', function () {
-                  console.log('This A-Frame entity collided with another entity!');
-                });
-
 
                  if (count === 20){
                   document.getElementById("winPopup").style.display ="unset";
                  }});
             }
           });
-    
-   
-          // AFRAME.registerComponent("foo", {
+
+
+
+
+          //MAKES IT MORE SPECIFIC, AND CAN BE DUBLICATED FOR MULTIPLE OBJECTS
+          // var button = document.getElementById("clickme"),
+          // count = -0.5;
+
+          // AFRAME.registerComponent("points", {
+         
           //   init: function() {
-          //      this.el.addEventListener("mouseenter", ()=>{
-          //          // Collision ! increment the score
-          //          console.log('woah')
-          //      })
+            
+          //    this.el.addEventListener("click", () => { 
+          //        count +=0.5;
+          //        button.innerHTML = "Score: " + count;
+                 
+
+          //        if (count === 20){
+          //         document.getElementById("winPopup").style.display ="unset";
+          //        }});
           //   }
-          // })
+          // });
+
+
+
+
+
+          // AFRAME.registerComponent('collect-disappear', {
+          //   // schema: {
+          //   //   color: {default: 'red'}
+          //   // },
           
+          //   init: function () {
+              
+          //     var el = this.el;  // <a-box>
+          //     // var defaultColor = el.getAttribute('material').color;
+          
+          //     el.addEventListener('collide', function () {
+          //       this.el.setAttribute('scale', '10 5 10');
+          //       console.log('collect disappear fired');
+          //       count +=0.5;
+          //     });
+          
+          //   }
+          // });
+    
+
+             
+
+          // AFRAME.registerComponent('collect-remove', {
+   
+  
+          //   init: function () {
+          //    // var data = this.data;
+          //    // var el = this.el;  // <a-box>
+          //     // var defaultColor = el.getAttribute('material').color;
+          
+          //     this.addEventListener('click', function () {
+          //       this.setAttribute('scale', '3 3 3');
+             
+          //     });
+          
+          //   }
+          // });
+                   
 
 
 
@@ -73,7 +125,11 @@
             });
       
       
-      
+     
+     
+
+
+
       
       
       
@@ -592,6 +648,8 @@
        });
       }
       
+
+
       
       
       //THE TRASH CAN LOCATIONS
@@ -658,12 +716,13 @@
             //  {location: {lat: 39.611615,  lng: -105.037431,},}, //Wynetka Ponds Dog Park
       
              //500
-      {location: {lat: 39.744829,  lng: -104.837667 ,},},
-      {location: {lat:39.744831,  lng: -104.837522,},},
+      // {location: {lat: 39.744829,  lng: -104.837667 ,},},
+      // {location: {lat:39.744831,  lng: -104.837522,},},
+
       //home
-      {location: {lat: 39.477062,  lng: -105.081663,},},
-      {location: {lat: 39.476847,  lng: -105.081652,},},
-      {location: {lat: 39.476857,  lng: -105.081657,},},
+      // {location: {lat: 39.477062,  lng: -105.081663,},},
+      // {location: {lat: 39.476847,  lng: -105.081652,},},
+      // {location: {lat: 39.476857,  lng: -105.081657,},},
       {location: {lat: 39.476720564669364,  lng: -105.08175373123294,},},
       {location: {lat: 39.745279808923684, lng: -104.83717304103573,},},
       {location: {lat: 39.7449715488114,  lng: -104.83740178596193,},},
@@ -694,10 +753,22 @@
             modelTrash.setAttribute('animation', 'property: rotation; to: 0 360 0; loop:true; dur: 4000; easing: linear');
             modelTrash.addEventListener('loaded', () => {
            window.dispatchEvent(new CustomEvent('gps-entity-place-loadedTrash'))
-           modelTrash.setAttribute('position', `0 ${modelHeight} 0;`);
+           modelTrash.setAttribute('position', `0 ${modelHeight} -20;`);
+
+
+         
+
+
+
+
+
+ 
        
             });
       
+
+
+
 //Collision
 
 
@@ -712,8 +783,99 @@
       
       //       });
        
-            sceneTrash.appendChild(modelTrash);
+    
+
+
+      
+     // modelTrash.addEventListener('collide', 'hideTrash');
+
+
+
+    
+   
+        
+        
+    
+      
+    //  modelTrash.setAttribute('dynamic-body');
+   //  modelTrash.setAttribute('change-color-on-hover');
+      //removes model when clicked
+    // AFRAME.registerComponent('collect-disappear', {})
+    //   modelTrash.addEventListener('click', () => {
+    //   //  modelTrash.remove();
+    //     modelTrash.setAttribute('scale', '10 10 10');
+    //   });
+
+   
+
+
+
+    AFRAME.registerComponent('collect-disappear', {
+      // schema: {
+      //   color: {default: 'red'}
+      // },
+    
+      init: function () {
+        
+        var el = this.el;  // <a-box>
+        // var defaultColor = el.getAttribute('material').color;
+    
+        el.addEventListener('collide', function () {
+          el.setAttribute('scale', '0.5 0.5 0.5');
+          console.log('collect disappear fired');
+          count +=5;
+        });
+    
+
+
+
+      }
+    });
+
+
+
+  //  modelTrash.setAttribute('collect-disappear', '');
+
+ 
+
+  //modelTrash.setAttribute('points', '');
+
+  modelTrash.setAttribute('change-color-on-hover', '');
+  
+    modelTrash.setAttribute('dynamic-body','');
+
+   
+
+    
+     
+
+          //  modelTrash.addEventListener('collide', () => {
+          //   //modelTrash.remove();
+          //   modelTrash.setAttribute('scale', '10 10 10');
+          //      });
+    
+
+
+
+   //THIS WORKS WITH CLICK
+      // modelTrash.addEventListener('click', function () {
+      // modelTrash.setAttribute('scale', '0 0 0');
+      // console.log('you a jerk');
+      // });
+
+
+
+  // modelTrash.append(dynamic-body);
+
+      
+sceneTrash.appendChild(modelTrash);
+         
+
+
       console.log(modelHeight);
+
+      
+
 //             if (modelHeight < 23.6860){
 // modelTrash.remove();
 // count+=1;
