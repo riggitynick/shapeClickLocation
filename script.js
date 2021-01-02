@@ -4,34 +4,12 @@
 
 
          // SCRIPT FOR SCORING
-          AFRAME.registerComponent("points", {
-         
-            init: function() {
-              var button = document.getElementById("clickme"), //can remove for more specificity
-              count = -0.5; //can remove for more specificity
-              //this is where the collision of other objects adds points
-             this.el.addEventListener("click", () => { 
-                 count +=0.5;
-                 button.innerHTML = "Score: " + count;
-                 
-
-                 if (count === 20){
-                  document.getElementById("winPopup").style.display ="unset";
-                 }});
-            }
-          });
-
-
-
-
-          //MAKES IT MORE SPECIFIC, AND CAN BE DUBLICATED FOR MULTIPLE OBJECTS
-          // var button = document.getElementById("clickme"),
-          // count = -0.5;
-
           // AFRAME.registerComponent("points", {
          
           //   init: function() {
-            
+          //     var button = document.getElementById("clickme"), //can remove for more specificity
+          //     count = -0.5; //can remove for more specificity
+              
           //    this.el.addEventListener("click", () => { 
           //        count +=0.5;
           //        button.innerHTML = "Score: " + count;
@@ -42,6 +20,28 @@
           //        }});
           //   }
           // });
+
+
+
+
+          //MAKES IT MORE SPECIFIC, AND CAN BE DUBLICATED FOR MULTIPLE OBJECTS
+          var button = document.getElementById("clickme"),
+          count = -0;
+
+          AFRAME.registerComponent("points", {
+         
+            init: function() {
+            
+             this.el.addEventListener("collide", () => { 
+                // count +=0.5;
+                //  button.innerHTML = "Score: " + count;
+                 
+
+                 if (count === 20){
+                  document.getElementById("winPopup").style.display ="unset";
+                 }});
+            }
+          });
 
 
 
@@ -720,9 +720,9 @@
       // {location: {lat:39.744831,  lng: -104.837522,},},
 
       //home
-      // {location: {lat: 39.477062,  lng: -105.081663,},},
-      // {location: {lat: 39.476847,  lng: -105.081652,},},
-      // {location: {lat: 39.476857,  lng: -105.081657,},},
+       {location: {lat: 39.477062,  lng: -105.081663,},},
+       {location: {lat: 39.476847,  lng: -105.081652,},},
+       {location: {lat: 39.476857,  lng: -105.081657,},},
       {location: {lat: 39.476720564669364,  lng: -105.08175373123294,},},
       {location: {lat: 39.745279808923684, lng: -104.83717304103573,},},
       {location: {lat: 39.7449715488114,  lng: -104.83740178596193,},},
@@ -824,6 +824,8 @@
           el.setAttribute('scale', '0.5 0.5 0.5');
           console.log('collect disappear fired');
           count +=5;
+          button.innerHTML = "Score: " + count;
+
         });
     
 
@@ -834,13 +836,13 @@
 
 
 
-  //  modelTrash.setAttribute('collect-disappear', '');
+    modelTrash.setAttribute('collect-disappear', '');
 
  
 
   //modelTrash.setAttribute('points', '');
 
-  modelTrash.setAttribute('change-color-on-hover', '');
+ // modelTrash.setAttribute('change-color-on-hover', '');
   
     modelTrash.setAttribute('dynamic-body','');
 
