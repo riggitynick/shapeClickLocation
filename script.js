@@ -11,7 +11,8 @@ AFRAME.registerComponent('collect-disappear', {
     // var defaultColor = el.getAttribute('material').color;
 
     el.addEventListener('collide', function () {
-      el.setAttribute('scale', '0 0 0');
+     // el.setAttribute('scale', '0 0 0');
+      el.remove();
       console.log('collect disappear fired');
       count +=1;
       button.innerHTML = "Score: " + count;
@@ -59,7 +60,7 @@ AFRAME.registerComponent('collect-disappear', {
                 //  button.innerHTML = "Score: " + count;
                  
 
-                 if (count === 800){
+                 if (count === 20){
                   document.getElementById("winPopup").style.display ="unset";
                  }});
             }
@@ -69,25 +70,7 @@ AFRAME.registerComponent('collect-disappear', {
 
 
 
-          // AFRAME.registerComponent('collect-disappear', {
-          //   // schema: {
-          //   //   color: {default: 'red'}
-          //   // },
-          
-          //   init: function () {
-              
-          //     var el = this.el;  // <a-box>
-          //     // var defaultColor = el.getAttribute('material').color;
-          
-          //     el.addEventListener('collide', function () {
-          //       this.el.setAttribute('scale', '10 5 10');
-          //       console.log('collect disappear fired');
-          //       count +=0.5;
-          //     });
-          
-          //   }
-          // });
-    
+  
 
              
 
@@ -751,6 +734,39 @@ AFRAME.registerComponent('collect-disappear', {
       {location: {lat: 39.4767227736905,  lng:  -105.08185386668289,},},
       {location: {lat: 39.476721738566425,  lng:  -105.08171171004454},},
 
+      //drive to safeway
+      {location: {lat: 39.477122410343625,  lng:  -105.08203099873181},},
+      {location: {lat: 39.47740677166334,  lng:  -105.08203418739164},},
+      {location: {lat: 39.47779330376479,  lng:  -105.08203578434234},},
+      {location: {lat: 39.47787454993185,  lng:  -105.08154936468364},},
+      {location: {lat: 39.47769728590449,  lng:  -105.08117936762049},},
+      {location: {lat: 39.477197501733514,  lng:  -105.08120647982506},},
+      {location: {lat: 39.47653029691424,  lng:  -105.08115225801308},},
+      {location: {lat: 39.47662262299216,  lng:  -105.08063713269647},},
+      {location: {lat: 39.47737845919897,  lng:  -105.08076790682622},},
+      {location: {lat: 39.47804565670487,  lng:  -105.08056695981627},},
+      {location: {lat: 39.478584826058324,  lng:  -105.07989873275142},},
+      {location: {lat: 39.47885317597892,  lng:  -105.07865956121518},},
+      {location: {lat: 39.47885564015799,  lng:  -105.07783983030848},},
+      {location: {lat: 39.478682071840296,  lng:  -105.07693557188841},},
+      {location: {lat: 39.47839156211174,  lng:  -105.0760392872758},},
+      {location: {lat: 39.47807396826054,  lng:  -105.07467731742783},},
+      {location: {lat: 39.47804688731291,  lng:  -105.07345090629434},},
+      {location: {lat: 39.478641450725526,  lng:  -105.0731622449308},},
+      {location: {lat: 39.479211390102876,  lng:  -105.07331534676418},},
+      {location: {lat: 39.47932956229957,  lng:  -105.07317500334345},},
+      {location: {lat: 39.47990934356312,  lng:  -105.07331215746187},},
+
+      {location: {lat: 39.4804349580648,  lng:  -105.0731750033389},},
+      {location: {lat: 39.48114274704807,  lng:  -105.073312157028},},
+      {location: {lat: 39.4818160625198,  lng:  -105.0731638403681},},
+      {location: {lat: 39.482432750377576,  lng:  -105.07330737343108},},
+      {location: {lat: 39.4832266811384,  lng:  -105.07317181396009},},
+      {location: {lat: 39.48392090204032,  lng:  -105.07331853635057},},
+      {location: {lat: 39.48425816206395,  lng:  -105.07319892573274},},
+      {location: {lat: 39.48498437539287,  lng:  -105.07330258735585},},
+      {location: {lat: 39.48534255505724,  lng:  -105.07317340833953},},
+      {location: {lat: 39.483526688142824,  lng:  -105.07497439572965},},
        
       
                ];
@@ -774,7 +790,7 @@ AFRAME.registerComponent('collect-disappear', {
             modelTrash.setAttribute('gps-entity-place', `latitude: ${latitudeTrash}; longitude: ${longitudeTrash};`);
             modelTrash.setAttribute('gltf-model', 'models/dogParkTrash.gltf');
             // modelCU.setAttribute('gltf-model', 'models/dogParkParking.gltf');
-            modelTrash.setAttribute('scale', '4 4 4');
+            modelTrash.setAttribute('scale', '15 15 15');
                  //allows to rotate
             modelTrash.setAttribute('animation', 'property: rotation; to: 0 360 0; loop:true; dur: 4000; easing: linear');
             modelTrash.addEventListener('loaded', () => {
