@@ -1,6 +1,28 @@
 //require('aframe-physics-system');
       
+AFRAME.registerComponent('collect-disappear', {
+  // schema: {
+  //   color: {default: 'red'}
+  // },
 
+  init: function () {
+    
+    var el = this.el;  // <a-box>
+    // var defaultColor = el.getAttribute('material').color;
+
+    el.addEventListener('collide', function () {
+      el.setAttribute('scale', '0 0 0');
+      console.log('collect disappear fired');
+      count +=1;
+      button.innerHTML = "Score: " + count;
+
+    });
+
+
+
+
+  }
+});
 
 
          // SCRIPT FOR SCORING
@@ -26,7 +48,7 @@
 
           //MAKES IT MORE SPECIFIC, AND CAN BE DUBLICATED FOR MULTIPLE OBJECTS
           var button = document.getElementById("clickme"),
-          count = -0;
+          count = 0;
 
           AFRAME.registerComponent("points", {
          
@@ -37,7 +59,7 @@
                 //  button.innerHTML = "Score: " + count;
                  
 
-                 if (count === 20){
+                 if (count === 800){
                   document.getElementById("winPopup").style.display ="unset";
                  }});
             }
@@ -726,6 +748,10 @@
       {location: {lat: 39.476720564669364,  lng: -105.08175373123294,},},
       {location: {lat: 39.745279808923684, lng: -104.83717304103573,},},
       {location: {lat: 39.7449715488114,  lng: -104.83740178596193,},},
+      {location: {lat: 39.4767227736905,  lng:  -105.08185386668289,},},
+      {location: {lat: 39.476721738566425,  lng:  -105.08171171004454},},
+
+       
       
                ];
                }
@@ -748,7 +774,7 @@
             modelTrash.setAttribute('gps-entity-place', `latitude: ${latitudeTrash}; longitude: ${longitudeTrash};`);
             modelTrash.setAttribute('gltf-model', 'models/dogParkTrash.gltf');
             // modelCU.setAttribute('gltf-model', 'models/dogParkParking.gltf');
-            modelTrash.setAttribute('scale', '30 30 30');
+            modelTrash.setAttribute('scale', '4 4 4');
                  //allows to rotate
             modelTrash.setAttribute('animation', 'property: rotation; to: 0 360 0; loop:true; dur: 4000; easing: linear');
             modelTrash.addEventListener('loaded', () => {
@@ -810,41 +836,18 @@
 
 
 
-    AFRAME.registerComponent('collect-disappear', {
-      // schema: {
-      //   color: {default: 'red'}
-      // },
-    
-      init: function () {
-        
-        var el = this.el;  // <a-box>
-        // var defaultColor = el.getAttribute('material').color;
-    
-        el.addEventListener('collide', function () {
-          el.setAttribute('scale', '0 0 0');
-          console.log('collect disappear fired');
-          count +=5;
-          button.innerHTML = "Score: " + count;
 
-        });
-    
-
-
-
-      }
-    });
-
-
+////////////////////////////
 
     modelTrash.setAttribute('collect-disappear', '');
-
+  modelTrash.setAttribute('dynamic-body','');
  
 
   //modelTrash.setAttribute('points', '');
 
  // modelTrash.setAttribute('change-color-on-hover', '');
   
-    modelTrash.setAttribute('dynamic-body','');
+ 
 
    
 
