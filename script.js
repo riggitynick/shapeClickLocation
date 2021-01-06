@@ -756,7 +756,6 @@ AFRAME.registerComponent('collect-disappear', {
       {location: {lat: 39.479211390102876,  lng:  -105.07331534676418},},
       {location: {lat: 39.47932956229957,  lng:  -105.07317500334345},},
       {location: {lat: 39.47990934356312,  lng:  -105.07331215746187},},
-
       {location: {lat: 39.4804349580648,  lng:  -105.0731750033389},},
       {location: {lat: 39.48114274704807,  lng:  -105.073312157028},},
       {location: {lat: 39.4818160625198,  lng:  -105.0731638403681},},
@@ -768,6 +767,27 @@ AFRAME.registerComponent('collect-disappear', {
       {location: {lat: 39.48534255505724,  lng:  -105.07317340833953},},
       {location: {lat: 39.483526688142824,  lng:  -105.07497439572965},},
        
+
+//Anschutz
+
+{location: {lat: 39.74457481432495,  lng:  -104.83866108261543},},
+{location: {lat: 39.7445728664968,  lng:  -104.83903323717811},},
+{location: {lat: 39.744559241331245,  lng:  -104.83927121501394},},
+{location: {lat: 39.744559240162936,  lng:  -104.83963830700563},},
+{location: {lat: 39.74457286424531,  lng:  -104.83998514617312},},
+{location: {lat: 39.74455534682611,  lng:  -104.84062565738022},},
+{location: {lat: 39.744440498285165,  lng:  -104.84029400844075},},
+{location: {lat: 39.74443465691467,  lng:  -104.83940286292423},},
+{location: {lat: 39.7444521777652,  lng:  -104.83877247670215},},
+
+{location: {lat: 39.74480646058864,  lng:  -104.8390534915629},},
+{location: {lat: 39.74506341288378,  lng:  -104.83903830142994},},
+{location: {lat: 39.74508677038135,  lng:  -104.83861298106083},},
+{location: {lat: 39.74478310076306,  lng:  -104.83855728461734},},
+{location: {lat: 39.745729141041664,  lng:  -104.83790917910498},},
+{location: {lat: 39.745734981795046,  lng:  -104.83853703086294},},
+{location: {lat: 39.746075631066105,  lng:  -104.83853956274321},},
+{location: {lat: 39.74646299625668,  lng:  -104.83858260173665},},
       
                ];
                }
@@ -788,7 +808,7 @@ AFRAME.registerComponent('collect-disappear', {
       
       
             modelTrash.setAttribute('gps-entity-place', `latitude: ${latitudeTrash}; longitude: ${longitudeTrash};`);
-            modelTrash.setAttribute('gltf-model', 'models/dogParkTrash.gltf');
+            modelTrash.setAttribute('gltf-model', 'models/dogParkTrees.gltf');
             // modelCU.setAttribute('gltf-model', 'models/dogParkParking.gltf');
             modelTrash.setAttribute('scale', '15 15 15');
                  //allows to rotate
