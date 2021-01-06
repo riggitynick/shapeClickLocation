@@ -10,12 +10,16 @@ AFRAME.registerComponent('collect-disappear', {
     var el = this.el;  // <a-box>
     // var defaultColor = el.getAttribute('material').color;
 
+    var ringSound = document.getElementById('ringSound');
+
     el.addEventListener('collide', function () {
      // el.setAttribute('scale', '0 0 0');
       el.remove();
       console.log('collect disappear fired');
       count +=1;
       button.innerHTML = "Score: " + count;
+
+      ringSound.play();
 
     });
 
@@ -24,6 +28,26 @@ AFRAME.registerComponent('collect-disappear', {
 
   }
 });
+
+// pads.forEach((pad, index) =>{
+
+//   pad.addEventListener('click', function(){
+                       
+//       sounds[index].currentTime = 0;
+//       sounds[index].play();
+
+//       accentColor1(index);
+//   })   
+// });
+
+
+
+
+
+
+
+
+
 
 
          // SCRIPT FOR SCORING
