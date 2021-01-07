@@ -827,7 +827,7 @@ AFRAME.registerComponent('collect-disappear', {
               let p = location.lat + latitudeTrash;
               let t = location.long - longitudeTrash;
          
-         let modelHeight = [(p + t) * 0.3];
+         let modelHeight = [(p + t) * 0.33];
       
       
       
@@ -840,6 +840,8 @@ AFRAME.registerComponent('collect-disappear', {
             modelTrash.addEventListener('loaded', () => {
            window.dispatchEvent(new CustomEvent('gps-entity-place-loadedTrash'))
            modelTrash.setAttribute('position', `0 ${modelHeight} 0;`);
+
+           
 
 
          
