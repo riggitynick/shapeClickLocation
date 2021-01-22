@@ -1,5 +1,5 @@
 //require('aframe-physics-system');
-      
+//MAKES OBJECT THAT YOU COLLIDE WITH DISAPPEAR, PLAYS A RING SOUND, AND ADDS 1 POINT TO YOUR SCORE      
 AFRAME.registerComponent('collect-disappear', {
   // schema: {
   //   color: {default: 'red'}
@@ -22,7 +22,6 @@ AFRAME.registerComponent('collect-disappear', {
       ringSound.play();
 
     });
-
 
 
 
@@ -618,7 +617,7 @@ AFRAME.registerComponent('collect-disappear', {
               }
               
       
-      ///////////////////////////////
+      /////////////////////////////// Gathers coords of user, for comparison of object coords
       
               function locationSize()  {}
               if(navigator.geolocation) {
