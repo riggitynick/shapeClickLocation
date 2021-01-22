@@ -82,7 +82,6 @@ AFRAME.registerComponent('collect-disappear', {
                 // count +=0.5;
                 //  button.innerHTML = "Score: " + count;
                  
-
                  if (count === 20){
                   document.getElementById("winPopup").style.display ="unset";
                  }});
@@ -448,11 +447,12 @@ AFRAME.registerComponent('collect-disappear', {
                       
       
                         //test2
-                AFRAME.registerComponent("test2", {
-                  init: function() {
-                   this.el.addEventListener("click", () => {  
-                   window.open("http://www.safeway.com", "new win");
-                      });}});
+
+                // AFRAME.registerComponent("test2", {
+                //   init: function() {
+                //    this.el.addEventListener("click", () => {  
+                //    window.open("http://www.safeway.com", "new win");
+                //       });}});
                
                
       
@@ -531,90 +531,90 @@ AFRAME.registerComponent('collect-disappear', {
       
       
        //THE FIRST BUSINESS' LOCATIONS
-      function staticLoadPlacesParking() {
-       return [
+      // function staticLoadPlacesParking() {
+      //  return [
       
       
-      //at work near office
-      //flag pole
-      { location: {lat: 39.744414,lng: -104.837586,  }, },
-      //childrens hosp
-      { location: {lat: 39.742616,lng: -104.836166,  }, },
-      //colfax ursula
-      { location: {lat: 39.740027,lng: -104.83095,  }, },
+      // //at work near office
+      // //flag pole
+      // { location: {lat: 39.744414,lng: -104.837586,  }, },
+      // //childrens hosp
+      // { location: {lat: 39.742616,lng: -104.836166,  }, },
+      // //colfax ursula
+      // { location: {lat: 39.740027,lng: -104.83095,  }, },
       
-      { location: {lat: 39.476921,lng: -105.082274,  }, },
-      { location: {lat: 39.476638,lng: -105.082994,  }, },
-      { location: {lat: 39.476290,lng: -105.083595,  }, },
-      { location: {lat: 39.475872,lng: -105.084223,  }, },
-      
-      
-      {location: {lat: 39.484604,  lng: -105.074975,},},
-            {location: {lat: 39.484071, lng: -105.075172,},},
-            {location: {lat: 39.483723,  lng: -105.075175,},},
-            {location: {lat: 39.484170,  lng: -105.073804,},},
-            {location: {lat: 39.482957,  lng: -105.073747,},},
+      // { location: {lat: 39.476921,lng: -105.082274,  }, },
+      // { location: {lat: 39.476638,lng: -105.082994,  }, },
+      // { location: {lat: 39.476290,lng: -105.083595,  }, },
+      // { location: {lat: 39.475872,lng: -105.084223,  }, },
       
       
-      
-      
-      
-            {location: {lat: 39.724642, lng: -105.029859,},}, //Barnum
-            {location: {lat: 39.781798,  lng: -105.052153,},}, //Berkeley Lake Dog Park
-            {location: {lat: 39.889865,  lng: -104.963441,},}, //Bill Goodspeed Happy Tails Dog Park
-            {location: {lat: 39.927629,  lng: -105.009662,},}, // Big Dry Creek
-            {location: {lat: 39.938930, lng: -105.051636,},}, //Broomfield County Commons Dog Park
-            {location: {lat: 39.939354,  lng: -105.048791,},}, //Broomfield County Commons Dog Park
-            {location: {lat: 39.632838,  lng: -105.022999,},}, //Centennial Park Off Leash Dog Area
-            {location: {lat: 39.631679,  lng: -105.018935,},}, //Centennial Park Off Leash Dog Area
-            {location: {lat: 39.562679, lng: -105.050013,},}, //Chatfield State Park Off-Leash Dog Area
-            {location: {lat: 39.561548,  lng: -105.055608,},}, //Chatfield State Park Off-Leash Dog Area
-            {location: {lat: 39.614110,  lng: -104.816574,},}, //Cherry Creek State Park Dog Off-Leash Area (DOLA)
-            {location: {lat: 39.623590,  lng: -104.830858,},},  //Cherry Creek State Park Dog Off-Leash Area (DOLA)
-            {location: {lat: 39.978228, lng: -105.166165,},}, //Davidson Mesa Dog park
-            {location: {lat: 39.532895,  lng: -104.949383,},}, //Digger's Dog Park at Dad Clark
-            {location: {lat: 39.779243,  lng: -105.185402,},}, //Dog Park at Tony Grampsas
-             //Duncan Park Off Leash Dog Area HAS NONE LISTED
-             {location: {lat: 39.990776,  lng: -105.222762,},}, //East Boulder Dog Park
-             {location: {lat: 39.628128,  lng: -105.006261,},}, //Englewood Canine Corral
-             {location: {lat:  39.534743,  lng: -104.994402,},}, //Fido's Field at Foothill Park
-             //First Creek Farm Small Dog Park HAS NONE LISTED
-             {location: {lat: 39.680500,  lng: -105.169244,},}, //Forsberg - Iron Spring Dog Park
-             //-Fuller Dog Park HAS NONE LISTED
-             {location: {lat: 39.491347,  lng: -104.870525,},}, //Glendale Farm Open Space Dog Park
-             {location: {lat: 39.638302,  lng: -104.785430,},}, //Grandview Dog Park
-             {location: {lat: 39.779144,  lng: -104.749837,},}, //Green Valley Ranch East Off Leash Area
-             {location: {lat: 39.968206,  lng: 39.968206,},}, //Happy Tails Dog Park
-             {location: {lat: 39.538156,  lng: -104.917197,},}, //Hound Hill Dog Park at Heritage Regional Park
-             //Howard Heuston Off Leash Dog Area HAS NONE LISTED
-             {location: {lat: 39.639773,  lng: -104.999578,},}, //Jackson dog park
-             {location: {lat: 39.649790,  lng: -104.874215,},}, //Kennedy dog park
-             {location: {lat: 39.970736,  lng: -105.131181,},}, //Louisville Dog Park
-             {location: {lat: 39.720318,  lng: -104.884929,},}, //Lowry Dog Park
-             //Northwest Greenbelt Off Leash Area HAS NONE LISTED
-             {location: {lat: 39.758273,  lng: -105.001841,},}, //Railyard Dog Park
-             {location: {lat: 39.546678,  lng: -105.023277,},}, //Rovers run dog park
-             {location: {lat: 39.748689,  lng: -104.897831,},}, //Stapleton Dog Park
-             {location: {lat: 40.004360,  lng: -105.074700,},}, //The Great Bark Dog Park
-             {location: {lat: 40.029655,  lng: -105.230795,},}, //Valmont Dog Park
-             {location: {lat: 39.816401,  lng: -105.203061,},}, //West Arvada Dog Park
-             {location: {lat: 39.878435,  lng: -105.132384,},}, //Westminster Hills Off Leash Dog Park
-             {location: {lat: 39.612074,  lng: -105.036799,},}, //Wynetka Ponds Dog Park
-      
-      
-      //500
-             {location: {lat: 39.745596,  lng: -104.837683,},},
-            // home
-             {location: {lat: 39.476687,  lng: -105.081950 ,},},
+      // {location: {lat: 39.484604,  lng: -105.074975,},},
+      //       {location: {lat: 39.484071, lng: -105.075172,},},
+      //       {location: {lat: 39.483723,  lng: -105.075175,},},
+      //       {location: {lat: 39.484170,  lng: -105.073804,},},
+      //       {location: {lat: 39.482957,  lng: -105.073747,},},
       
       
       
       
       
+      //       {location: {lat: 39.724642, lng: -105.029859,},}, //Barnum
+      //       {location: {lat: 39.781798,  lng: -105.052153,},}, //Berkeley Lake Dog Park
+      //       {location: {lat: 39.889865,  lng: -104.963441,},}, //Bill Goodspeed Happy Tails Dog Park
+      //       {location: {lat: 39.927629,  lng: -105.009662,},}, // Big Dry Creek
+      //       {location: {lat: 39.938930, lng: -105.051636,},}, //Broomfield County Commons Dog Park
+      //       {location: {lat: 39.939354,  lng: -105.048791,},}, //Broomfield County Commons Dog Park
+      //       {location: {lat: 39.632838,  lng: -105.022999,},}, //Centennial Park Off Leash Dog Area
+      //       {location: {lat: 39.631679,  lng: -105.018935,},}, //Centennial Park Off Leash Dog Area
+      //       {location: {lat: 39.562679, lng: -105.050013,},}, //Chatfield State Park Off-Leash Dog Area
+      //       {location: {lat: 39.561548,  lng: -105.055608,},}, //Chatfield State Park Off-Leash Dog Area
+      //       {location: {lat: 39.614110,  lng: -104.816574,},}, //Cherry Creek State Park Dog Off-Leash Area (DOLA)
+      //       {location: {lat: 39.623590,  lng: -104.830858,},},  //Cherry Creek State Park Dog Off-Leash Area (DOLA)
+      //       {location: {lat: 39.978228, lng: -105.166165,},}, //Davidson Mesa Dog park
+      //       {location: {lat: 39.532895,  lng: -104.949383,},}, //Digger's Dog Park at Dad Clark
+      //       {location: {lat: 39.779243,  lng: -105.185402,},}, //Dog Park at Tony Grampsas
+      //        //Duncan Park Off Leash Dog Area HAS NONE LISTED
+      //        {location: {lat: 39.990776,  lng: -105.222762,},}, //East Boulder Dog Park
+      //        {location: {lat: 39.628128,  lng: -105.006261,},}, //Englewood Canine Corral
+      //        {location: {lat:  39.534743,  lng: -104.994402,},}, //Fido's Field at Foothill Park
+      //        //First Creek Farm Small Dog Park HAS NONE LISTED
+      //        {location: {lat: 39.680500,  lng: -105.169244,},}, //Forsberg - Iron Spring Dog Park
+      //        //-Fuller Dog Park HAS NONE LISTED
+      //        {location: {lat: 39.491347,  lng: -104.870525,},}, //Glendale Farm Open Space Dog Park
+      //        {location: {lat: 39.638302,  lng: -104.785430,},}, //Grandview Dog Park
+      //        {location: {lat: 39.779144,  lng: -104.749837,},}, //Green Valley Ranch East Off Leash Area
+      //        {location: {lat: 39.968206,  lng: 39.968206,},}, //Happy Tails Dog Park
+      //        {location: {lat: 39.538156,  lng: -104.917197,},}, //Hound Hill Dog Park at Heritage Regional Park
+      //        //Howard Heuston Off Leash Dog Area HAS NONE LISTED
+      //        {location: {lat: 39.639773,  lng: -104.999578,},}, //Jackson dog park
+      //        {location: {lat: 39.649790,  lng: -104.874215,},}, //Kennedy dog park
+      //        {location: {lat: 39.970736,  lng: -105.131181,},}, //Louisville Dog Park
+      //        {location: {lat: 39.720318,  lng: -104.884929,},}, //Lowry Dog Park
+      //        //Northwest Greenbelt Off Leash Area HAS NONE LISTED
+      //        {location: {lat: 39.758273,  lng: -105.001841,},}, //Railyard Dog Park
+      //        {location: {lat: 39.546678,  lng: -105.023277,},}, //Rovers run dog park
+      //        {location: {lat: 39.748689,  lng: -104.897831,},}, //Stapleton Dog Park
+      //        {location: {lat: 40.004360,  lng: -105.074700,},}, //The Great Bark Dog Park
+      //        {location: {lat: 40.029655,  lng: -105.230795,},}, //Valmont Dog Park
+      //        {location: {lat: 39.816401,  lng: -105.203061,},}, //West Arvada Dog Park
+      //        {location: {lat: 39.878435,  lng: -105.132384,},}, //Westminster Hills Off Leash Dog Park
+      //        {location: {lat: 39.612074,  lng: -105.036799,},}, //Wynetka Ponds Dog Park
       
       
-              ];
-              }
+      // //500
+      //        {location: {lat: 39.745596,  lng: -104.837683,},},
+      //       // home
+      //        {location: {lat: 39.476687,  lng: -105.081950 ,},},
+      
+      
+      
+      
+      
+      
+      
+      //         ];
+      //         }
               
       
       /////////////////////////////// Gathers coords of user, for comparison of object coords
