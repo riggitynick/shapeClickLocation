@@ -1,3 +1,10 @@
+
+////////////////// LITERALLY JUST ADDED THIS TO REMOVE A CONSOLE ERROR
+const center = new THREE.Vector3();
+bBox.getCenter( center );
+///////////////////////////////////////////////
+
+
 //require('aframe-physics-system');
 //MAKES OBJECT THAT YOU COLLIDE WITH DISAPPEAR, PLAYS A RING SOUND, AND ADDS 1 POINT TO YOUR SCORE      
 AFRAME.registerComponent('collect-disappear', {
@@ -13,8 +20,9 @@ AFRAME.registerComponent('collect-disappear', {
     var ringSound = document.getElementById('ringSound');
 
     el.addEventListener('collide', function () {
-     // el.setAttribute('scale', '0 0 0');
-      el.remove();
+      el.setAttribute('scale', '0 0 0');
+      //el.remove();
+     // el.getCenter('','');
       console.log('collect disappear fired');
       count +=1;
       button.innerHTML = "Score: " + count;
@@ -161,26 +169,26 @@ AFRAME.registerComponent('collect-disappear', {
       
       
             //Leprino
-            AFRAME.registerComponent("leprino", {
-              init: function() {
-               this.el.addEventListener("click", () => {  
-               window.open("https://www.cuanschutz.edu/", "Leprino");
-               });
-              }
-            });
+        //     AFRAME.registerComponent("leprino", {
+        //       init: function() {
+        //        this.el.addEventListener("click", () => {  
+        //        window.open("https://www.cuanschutz.edu/", "Leprino");
+        //        });
+        //       }
+        //     });
          
-               //New next to AO1
-                 AFRAME.registerComponent("mysteryao1", {
-                 init: function() {
-                  this.el.addEventListener("click", () => {  
-                  window.open("https://www.cuanschutz.edu/", "New bldg");
-                  });}});
-        //biotech1
-        AFRAME.registerComponent("biotech1", {
-          init: function() {
-           this.el.addEventListener("click", () => {  
-           window.open("https://www.cuanschutz.edu/", "Bioengineering 1");
-              });}});
+        //        //New next to AO1
+        //          AFRAME.registerComponent("mysteryao1", {
+        //          init: function() {
+        //           this.el.addEventListener("click", () => {  
+        //           window.open("https://www.cuanschutz.edu/", "New bldg");
+        //           });}});
+        // //biotech1
+        // AFRAME.registerComponent("biotech1", {
+        //   init: function() {
+        //    this.el.addEventListener("click", () => {  
+        //    window.open("https://www.cuanschutz.edu/", "Bioengineering 1");
+        //       });}});
       
       
       
@@ -619,13 +627,13 @@ AFRAME.registerComponent('collect-disappear', {
       
       /////////////////////////////// Gathers coords of user, for comparison of object coords
       
-              // function locationSize()  {}
-              // if(navigator.geolocation) {
-              //  navigator.geolocation.getCurrentPosition((position) => {
-              //    location.lat = position.coords.latitude;
-              //    location.long = position.coords.longitude;
-              //        console.log(location.lat); 
-              //   })};
+              function locationSize()  {}
+              if(navigator.geolocation) {
+               navigator.geolocation.getCurrentPosition((position) => {
+                 location.lat = position.coords.latitude;
+                 location.long = position.coords.longitude;
+                     console.log(location.lat); 
+                })};
       
       
       
