@@ -244,203 +244,203 @@ AFRAME.registerComponent('collect-disappear', {
       
       
       
-      //402 
-          AFRAME.registerComponent("b402", {
-            init: function() {
-             this.el.addEventListener("click", () => {  
-             document.getElementById("b402Popup").style.display ="unset";
-                });}});
+      // //402 
+      //     AFRAME.registerComponent("b402", {
+      //       init: function() {
+      //        this.el.addEventListener("click", () => {  
+      //        document.getElementById("b402Popup").style.display ="unset";
+      //           });}});
          
-      function remove402Popup(){
-        document.getElementById("b402Popup").style.display = "none";
-      };
+      // function remove402Popup(){
+      //   document.getElementById("b402Popup").style.display = "none";
+      // };
       
-      //401 
-      AFRAME.registerComponent("b401", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("b401Popup").style.display ="unset";
-            });}});
+      // //401 
+      // AFRAME.registerComponent("b401", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("b401Popup").style.display ="unset";
+      //       });}});
       
-      function remove401Popup(){
-      document.getElementById("b401Popup").style.display = "none";
-      };
+      // function remove401Popup(){
+      // document.getElementById("b401Popup").style.display = "none";
+      // };
       
-      //400 
-      AFRAME.registerComponent("b400", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("b400Popup").style.display ="unset";
-            });}});
+      // //400 
+      // AFRAME.registerComponent("b400", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("b400Popup").style.display ="unset";
+      //       });}});
       
-      function remove400Popup(){
-      document.getElementById("b400Popup").style.display = "none";
-      };
+      // function remove400Popup(){
+      // document.getElementById("b400Popup").style.display = "none";
+      // };
       
-      //RC2 
-      AFRAME.registerComponent("rc2", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("rc2Popup").style.display ="unset";
-            });}});
+      // //RC2 
+      // AFRAME.registerComponent("rc2", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("rc2Popup").style.display ="unset";
+      //       });}});
       
-      function removeRc2Popup(){
-      document.getElementById("rc2Popup").style.display = "none";
-      };
+      // function removeRc2Popup(){
+      // document.getElementById("rc2Popup").style.display = "none";
+      // };
       
-      //AO1
-      AFRAME.registerComponent("ao1", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("ao1Popup").style.display ="unset";
-            });}});
+      // //AO1
+      // AFRAME.registerComponent("ao1", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("ao1Popup").style.display ="unset";
+      //       });}});
       
-      function removeAo1Popup(){
-      document.getElementById("ao1Popup").style.display = "none";
-      };
+      // function removeAo1Popup(){
+      // document.getElementById("ao1Popup").style.display = "none";
+      // };
       
-      //rc1n
-      AFRAME.registerComponent("rc1n", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("rc1nPopup").style.display ="unset";
-            });}});
+      // //rc1n
+      // AFRAME.registerComponent("rc1n", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("rc1nPopup").style.display ="unset";
+      //       });}});
       
-      function removeRc1nPopup(){
-      document.getElementById("rc1nPopup").style.display = "none";
-      };
+      // function removeRc1nPopup(){
+      // document.getElementById("rc1nPopup").style.display = "none";
+      // };
       
-      //rc1s
-      AFRAME.registerComponent("rc1s", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("rc1sPopup").style.display ="unset";
-            });}});
+      // //rc1s
+      // AFRAME.registerComponent("rc1s", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("rc1sPopup").style.display ="unset";
+      //       });}});
       
-      function removeRc1sPopup(){
-      document.getElementById("rc1sPopup").style.display = "none";
-      };
+      // function removeRc1sPopup(){
+      // document.getElementById("rc1sPopup").style.display = "none";
+      // };
       
-      //pharmacy
-      AFRAME.registerComponent("pharmacy", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("pharmacyPopup").style.display ="unset";
-            });}});
+      // //pharmacy
+      // AFRAME.registerComponent("pharmacy", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("pharmacyPopup").style.display ="unset";
+      //       });}});
       
-      function removePharmacysPopup(){
-      document.getElementById("pharmacyPopup").style.display = "none";
-      };
+      // function removePharmacysPopup(){
+      // document.getElementById("pharmacyPopup").style.display = "none";
+      // };
       
-      //b500
-      AFRAME.registerComponent("b500", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("b500Popup").style.display ="unset";
-            });}});
+      // //b500
+      // AFRAME.registerComponent("b500", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("b500Popup").style.display ="unset";
+      //       });}});
       
-      function removeB500Popup(){
-      document.getElementById("b500Popup").style.display = "none";
-      };
+      // function removeB500Popup(){
+      // document.getElementById("b500Popup").style.display = "none";
+      // };
       
-      //barbdavis
-      AFRAME.registerComponent("barbdavis", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("barbdavisPopup").style.display ="unset";
-            });}});
+      // //barbdavis
+      // AFRAME.registerComponent("barbdavis", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("barbdavisPopup").style.display ="unset";
+      //       });}});
       
-      function removeBarbdavisPopup(){
-      document.getElementById("barbdavisPopup").style.display = "none";
-      };
+      // function removeBarbdavisPopup(){
+      // document.getElementById("barbdavisPopup").style.display = "none";
+      // };
       
-      //library
-      AFRAME.registerComponent("library", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("libraryPopup").style.display ="unset";
-            });}});
+      // //library
+      // AFRAME.registerComponent("library", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("libraryPopup").style.display ="unset";
+      //       });}});
       
-      function removeLibraryPopup(){
-      document.getElementById("libraryPopup").style.display = "none";
-      };
+      // function removeLibraryPopup(){
+      // document.getElementById("libraryPopup").style.display = "none";
+      // };
       
-      //nighthorse
-      AFRAME.registerComponent("nighthorse", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("nighthorsePopup").style.display ="unset";
-            });}});
+      // //nighthorse
+      // AFRAME.registerComponent("nighthorse", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("nighthorsePopup").style.display ="unset";
+      //       });}});
       
-      function removeNighthorsePopup(){
-      document.getElementById("nighthorsePopup").style.display = "none";
-      };
+      // function removeNighthorsePopup(){
+      // document.getElementById("nighthorsePopup").style.display = "none";
+      // };
       
-      //ed1
-      AFRAME.registerComponent("ed1", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("ed1Popup").style.display ="unset";
-            });}});
+      // //ed1
+      // AFRAME.registerComponent("ed1", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("ed1Popup").style.display ="unset";
+      //       });}});
       
-      function removeEd1Popup(){
-      document.getElementById("ed1Popup").style.display = "none";
-      };
+      // function removeEd1Popup(){
+      // document.getElementById("ed1Popup").style.display = "none";
+      // };
       
-      //dental 
-      AFRAME.registerComponent("dental", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("dentalPopup").style.display ="unset";
-            });}});
+      // //dental 
+      // AFRAME.registerComponent("dental", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("dentalPopup").style.display ="unset";
+      //       });}});
       
-      function removeDentalPopup(){
-      document.getElementById("dentalPopup").style.display = "none";
-      };
+      // function removeDentalPopup(){
+      // document.getElementById("dentalPopup").style.display = "none";
+      // };
       
-      //fulgeneti
-      AFRAME.registerComponent("fulgeneti", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("fulgenetiPopup").style.display ="unset";
-            });}});
+      // //fulgeneti
+      // AFRAME.registerComponent("fulgeneti", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("fulgenetiPopup").style.display ="unset";
+      //       });}});
       
-      function removeFulgenetiPopup(){
-      document.getElementById("fulgenetiPopup").style.display = "none";
-      };
+      // function removeFulgenetiPopup(){
+      // document.getElementById("fulgenetiPopup").style.display = "none";
+      // };
       
-      //ed2n
-      AFRAME.registerComponent("ed2n", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("ed2nPopup").style.display ="unset";
-            });}});
+      // //ed2n
+      // AFRAME.registerComponent("ed2n", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("ed2nPopup").style.display ="unset";
+      //       });}});
       
-      function removeEd2nPopup(){
-      document.getElementById("ed2nPopup").style.display = "none";
-      };
+      // function removeEd2nPopup(){
+      // document.getElementById("ed2nPopup").style.display = "none";
+      // };
       
-      //ed2s
-      AFRAME.registerComponent("ed2s", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("ed2sPopup").style.display ="unset";
-            });}});
+      // //ed2s
+      // AFRAME.registerComponent("ed2s", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("ed2sPopup").style.display ="unset";
+      //       });}});
       
-      function removeEd2sPopup(){
-      document.getElementById("ed2sPopup").style.display = "none";
-      };
+      // function removeEd2sPopup(){
+      // document.getElementById("ed2sPopup").style.display = "none";
+      // };
       
-      //campserve
-      AFRAME.registerComponent("campserve", {
-        init: function() {
-         this.el.addEventListener("click", () => {  
-         document.getElementById("campservePopup").style.display ="unset";
-            });}});
+      // //campserve
+      // AFRAME.registerComponent("campserve", {
+      //   init: function() {
+      //    this.el.addEventListener("click", () => {  
+      //    document.getElementById("campservePopup").style.display ="unset";
+      //       });}});
       
-      function removeCampservePopup(){
-      document.getElementById("campservePopup").style.display = "none";
-      };
+      // function removeCampservePopup(){
+      // document.getElementById("campservePopup").style.display = "none";
+      // };
       
       
       
@@ -487,14 +487,14 @@ AFRAME.registerComponent('collect-disappear', {
         
           
         
-           AFRAME.registerComponent('vanish', {
-          // ...
-          pause: function () {
+        //    AFRAME.registerComponent('vanish', {
+        //   // ...
+        //   pause: function () {
             
-            this.removeEventListener();
-          }
-          // ...
-        });
+        //     this.removeEventListener();
+        //   }
+        //   // ...
+        // });
          
       
            
