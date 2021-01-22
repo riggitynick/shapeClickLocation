@@ -268,15 +268,15 @@ float: right;
  <div id="clickme">Score</div>
 
  
-  <audio ="ringSound" src="./audio/Sonic - Rings.mp3"></audio>
+ <audio id="ringSound" src="./audio/Sonic - Rings.mp3"></audio>
 
 
 
 
- <a-entity>
- <a-camera position="0 10 0" scale="0.45 0.45 0.45" kinematic-body gps-camera rotation-reader look-controls="enabled: true; hmdEnabled: false; touchEnabled: false;" fov="47" near="0.5" far="9000" cursor="rayOrigin: mouse">
+ <!-- <a-entity> -->
+ <a-camera position="0 30 0" scale="0.45 0.45 0.45" kinematic-body gps-camera rotation-reader look-controls="enabled: true; hmdEnabled: false; touchEnabled: false;" fov="47" near="0.5" far="6000" cursor="rayOrigin: mouse">
 
-
+ <!-- for phone  :    position="0 10 0" -->
 
   <!-- <a-entity sphere-collider="objects: a-box" super-hands hand-controls="left"></a-entity>
   <a-entity sphere-collider="objects: a-box" super-hands hand-controls="right"></a-entity>   
@@ -295,7 +295,8 @@ float: right;
 
 
 </a-camera >
- </a-entity>
+
+ <!-- </a-entity> -->
 
  
 

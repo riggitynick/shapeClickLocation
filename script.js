@@ -828,7 +828,7 @@ AFRAME.registerComponent('collect-disappear', {
               let t = location.long - longitudeTrash;
          
          let modelHeight = [(p + t) * 0.33];
-      
+
       
       
             modelTrash.setAttribute('gps-entity-place', `latitude: ${latitudeTrash}; longitude: ${longitudeTrash};`);
@@ -840,6 +840,8 @@ AFRAME.registerComponent('collect-disappear', {
             modelTrash.addEventListener('loaded', () => {
            window.dispatchEvent(new CustomEvent('gps-entity-place-loadedTrash'))
            modelTrash.setAttribute('position', `0 ${modelHeight} 0;`);
+           
+         //modelTrash.getCenter('position');
 
            
 
@@ -939,7 +941,7 @@ sceneTrash.appendChild(modelTrash);
          
 
 
-      console.log(modelHeight);
+     // console.log(modelHeight);
 
       
 
@@ -1623,6 +1625,8 @@ document.getElementById("winPopup").style.display = "none";
      
 
       
+      // const center = new THREE.Vector3();
+      // modelTrash.getCenter( center );
       
       
       
