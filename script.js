@@ -1041,10 +1041,12 @@ modelTrash.setAttribute('dynamic-body','');
       
 sceneTrash.appendChild(modelTrash);
          
-var target = new THREE.Vector3();
+//var target = new THREE.Vector3();
                
            
-modelTrash.getCenter(target); 
+//this.getCenter(target); 
+
+
 // bBox3.getCenter(modelTrash); 
 //sceneTrash.getCenter(center);
 
