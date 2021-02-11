@@ -1,8 +1,31 @@
 
 ////////////////// LITERALLY JUST ADDED THIS TO REMOVE A CONSOLE ERROR
-const center = new THREE.Vector3();
-bBox.getCenter( center );
-///////////////////////////////////////////////
+// const user = document.querySelector("a-camera");
+// const center = new THREE.Vector3();
+// user.getCenter( center );
+
+
+
+// function getCenterPoint(mesh) {
+//   var geometry = mesh.geometry;
+//   geometry.computeBoundingBox();
+//   var center = new THREE.Vector3();
+//   geometry.boundingBox.getCenter( center );
+//   mesh.localToWorld( center );
+  
+//   return center;
+// }
+
+// getCenterPoint(mesh);
+
+
+
+
+
+/////////////////////////////////////////////// THIS WILL NEED TO GO IN THE MODEL CREATION/RENDER
+// var centerTrash = new THREE.Vector3();
+//          modelTrash.getCenter( centerTrash );
+
 
 
 //require('aframe-physics-system');
@@ -17,17 +40,22 @@ AFRAME.registerComponent('collect-disappear', {
     var el = this.el;  // <a-box>
     // var defaultColor = el.getAttribute('material').color;
 
+
+
     var ringSound = document.getElementById('ringSound');
 
     el.addEventListener('collide', function () {
       el.setAttribute('scale', '0 0 0');
       //el.remove();
-     // el.getCenter('','');
+     
       console.log('collect disappear fired');
       count +=1;
       button.innerHTML = "Score: " + count;
 
       ringSound.play();
+
+
+
 
     });
 
@@ -120,9 +148,7 @@ AFRAME.registerComponent('collect-disappear', {
           //   }
           // });
                    
-
-
-
+      
       
       function mapView(){
         //make this the legend page
@@ -134,10 +160,48 @@ AFRAME.registerComponent('collect-disappear', {
           tick: (function () {
             var position = new THREE.Vector3();
             var quaternion = new THREE.Quaternion();
+
+           // var target = new THREE.Vector3();
+
+
+
+
+            // var target = 1;
+            // let bBox = new THREE.Box3().setFromObject(this.selected)
+            //     // const center = new THREE.Vector3();
+            //       bBox.getCenter( position );
+
+
+            // quaternion.getCenter(position);
+
+
+
         
             return function () {
               this.el.object3D.getWorldPosition(position);
               this.el.object3D.getWorldQuaternion(quaternion);
+          
+              
+
+          
+   
+          
+              //   this.el.object3D.getCenter( position );
+
+          
+//  function getCenterPoint(mesh) {
+           // var geometry = this.geometry;
+           // geometry.computeBoundingBox();
+           // var center = new THREE.Vector3();
+            //mesh.localToWorld( center );
+           // return center;
+     //   }
+      
+
+// getCenterPoint();
+
+
+
               // position and rotation now contain vector and quaternion in world space.
             };
           })
@@ -160,7 +224,6 @@ AFRAME.registerComponent('collect-disappear', {
             });
       
       
-     
      
 
 
@@ -364,7 +427,7 @@ AFRAME.registerComponent('collect-disappear', {
       // //library
       // AFRAME.registerComponent("library", {
       //   init: function() {
-      //    this.el.addEventListener("click", () => {  
+      //    this.el.addEventListener("c lick", () => {  
       //    document.getElementById("libraryPopup").style.display ="unset";
       //       });}});
       
@@ -508,6 +571,8 @@ AFRAME.registerComponent('collect-disappear', {
            
               window.onload = () => {navigator.geolocation.getCurrentPosition((position) => {
                 document.querySelector('a-entity').setAttribute('gps-entity-place', `latitude: ${position.coords.latitude}; longitude: ${position.coords.longitude};`)
+             
+                   
               });
              }
             
@@ -533,6 +598,7 @@ AFRAME.registerComponent('collect-disappear', {
         // renderPlacesRestroom(placesRestroom);
         // renderPlacesShelter(placesShelter);
         // renderPlacesGate(placesGate);
+
       };
       
       
@@ -686,6 +752,7 @@ AFRAME.registerComponent('collect-disappear', {
       
 
 
+
       
       
       //THE TRASH CAN LOCATIONS
@@ -823,50 +890,69 @@ AFRAME.registerComponent('collect-disappear', {
                ];
                }
           
+           
       //RENDER THE SECOND(CU) BUSINESS' 3D MODEL OR LOGO - AND SET THE OBJECTS ATTRIBUTES
        function renderPlacesTrash(placesTrash) {
+    
+     
         let sceneTrash = document.querySelector('a-scene');
+
+
           placesTrash.forEach((placeTrash) => {
+       
+
             let latitudeTrash = placeTrash.location.lat;
             let longitudeTrash = placeTrash.location.lng;
+          
+
               let modelTrash = document.createElement('a-entity');
-      
+
+              
+             
               let p = location.lat + latitudeTrash;
               let t = location.long - longitudeTrash;
          
          let modelHeight = [(p + t) * 0.33];
 
-      
-      
             modelTrash.setAttribute('gps-entity-place', `latitude: ${latitudeTrash}; longitude: ${longitudeTrash};`);
+          
             modelTrash.setAttribute('gltf-model', 'models/dogParkTrees.gltf');
+         
             // modelCU.setAttribute('gltf-model', 'models/dogParkParking.gltf');
             modelTrash.setAttribute('scale', '15 15 15');
+          
                  //allows to rotate
             modelTrash.setAttribute('animation', 'property: rotation; to: 0 360 0; loop:true; dur: 4000; easing: linear');
+           
             modelTrash.addEventListener('loaded', () => {
+              
+              
+
            window.dispatchEvent(new CustomEvent('gps-entity-place-loadedTrash'))
+          
           //  modelTrash.setAttribute('position', `0 2 0;`);
           modelTrash.setAttribute('position', `0 ${modelHeight} 0;`);
            
+
          
-
-           
-
-
          
 
 
+       //  bBox3 = modelTrash;
+          // var geometry = mesh.geometry;
+          // geometry.computeBoundingBox();
+
+         // var center = new THREE.Vector3(a-canvas);
+          // modelTrash.getCenter(center);  
+         // modelTrash.getCenter(center);   
 
 
 
  
+ 
        
             });
-      
-
-
-
+         
 //Collision
 
 
@@ -910,10 +996,15 @@ AFRAME.registerComponent('collect-disappear', {
 
 
 ////////////////////////////
+modelTrash.setAttribute('dynamic-body','');
 
     modelTrash.setAttribute('collect-disappear', '');
-  modelTrash.setAttribute('dynamic-body','');
+ // modelTrash.getCenter('dynamic-body','');
  
+ // modelTrash.setAttribute('kinematic-body','');
+// modelTrash.setAttribute('physics-collider','');
+
+// modelTrash.setAttribute('dynamic-body','');
 
   //modelTrash.setAttribute('points', '');
 
@@ -921,7 +1012,7 @@ AFRAME.registerComponent('collect-disappear', {
   
  
 
-   
+
 
     
      
@@ -944,10 +1035,18 @@ AFRAME.registerComponent('collect-disappear', {
 
   // modelTrash.append(dynamic-body);
 
+
+ 
+
       
 sceneTrash.appendChild(modelTrash);
          
-
+var target = new THREE.Vector3();
+               
+           
+modelTrash.getCenter(target); 
+// bBox3.getCenter(modelTrash); 
+//sceneTrash.getCenter(center);
 
      // console.log(modelHeight);
 
@@ -965,16 +1064,23 @@ sceneTrash.appendChild(modelTrash);
       ////////////////////////
       
       
-      
-        });
+
+        }    
+       
+        )
+        
+        
+        ;
+  
+   
+       
        }
       
       
       
       
       
-      
-      
+    
       
       
       
@@ -1632,11 +1738,8 @@ document.getElementById("winPopup").style.display = "none";
     
      
 
-      
-      // const center = new THREE.Vector3();
-      // modelTrash.getCenter( center );
+
       
       
       
-      
-      
+
