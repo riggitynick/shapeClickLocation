@@ -5,6 +5,49 @@
 // user.getCenter( center );
 
 
+AFRAME.registerComponent('make-dynamic', {
+   
+  
+  init: function () {
+   // var data = this.data;
+   // var el = this.el;  // <a-box>
+    // var defaultColor = el.getAttribute('material').color;
+    var el = this.el;
+
+   var test = document.querySelectorAll('a-entity');
+
+    const boundingBox = new THREE.Box3('');
+    const center = boundingBox.getCenter('test');
+
+    console.log(center);
+    // get bounding box of object - this will be used to setup controls and camera
+  //  boundingBox.setFromObject(center);
+    
+   
+    
+    //const size = boundingBox.getSize();
+
+
+    
+    //var center = this.el.getCenter(target);
+   //console.log(center);
+      el.setAttribute('dynamic-body', '');
+   
+    
+
+  }
+});
+
+
+// const b = new THREE.Vector3( );
+// this.getCenter();
+// console.log(b);
+
+
+
+
+
+
 
 // function getCenterPoint(mesh) {
 //   var geometry = mesh.geometry;
@@ -925,7 +968,7 @@ AFRAME.registerComponent('collect-disappear', {
             modelTrash.setAttribute('animation', 'property: rotation; to: 0 360 0; loop:true; dur: 4000; easing: linear');
            
             modelTrash.addEventListener('loaded', () => {
-              
+              modelTrash.setAttribute('kinematic-body','');
               
 
            window.dispatchEvent(new CustomEvent('gps-entity-place-loadedTrash'))
@@ -933,6 +976,11 @@ AFRAME.registerComponent('collect-disappear', {
           //  modelTrash.setAttribute('position', `0 2 0;`);
           modelTrash.setAttribute('position', `0 ${modelHeight} 0;`);
            
+//           var center = boundingBox.getCenter(modelTrash);
+// console.log(center);
+
+
+
 
          
          
@@ -940,7 +988,15 @@ AFRAME.registerComponent('collect-disappear', {
 
        //  bBox3 = modelTrash;
           // var geometry = mesh.geometry;
-          // geometry.computeBoundingBox();
+        //  var geometry = modelTrash;
+
+          // Box3.setFromObject();
+          // Box3.getCenter();
+
+         // modelTrash.setFromObject();
+          // modelTrash.getCenter();
+
+        //  geometry.computeBoundingBox();
 
          // var center = new THREE.Vector3(a-canvas);
           // modelTrash.getCenter(center);  
@@ -996,15 +1052,21 @@ AFRAME.registerComponent('collect-disappear', {
 
 
 ////////////////////////////
-modelTrash.setAttribute('dynamic-body','');
+//modelTrash.setAttribute('dynamic-body','');
 
     modelTrash.setAttribute('collect-disappear', '');
+  
+    //modelTrash.setAttribute('dynamic-body','');
+
+
+    // modelTrash.setAttribute('kinematic-body','');
+
  // modelTrash.getCenter('dynamic-body','');
  
  // modelTrash.setAttribute('kinematic-body','');
 // modelTrash.setAttribute('physics-collider','');
 
-// modelTrash.setAttribute('dynamic-body','');
+//modelTrash.setAttribute('make-dynamic', '');
 
   //modelTrash.setAttribute('points', '');
 
