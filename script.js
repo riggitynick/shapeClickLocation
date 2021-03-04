@@ -184,7 +184,7 @@ AFRAME.registerComponent('collect-disappear', {
                 // count +=0.5;
                 //  button.innerHTML = "Score: " + count;
                  
-                 if (count === 20){
+                 if (count === 10){
                   document.getElementById("winPopup").style.display ="unset";
                  }});
             }
