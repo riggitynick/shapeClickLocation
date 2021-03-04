@@ -49,19 +49,33 @@
 
 
 
-// function getCenterPoint(mesh) {
-//   var geometry = mesh.geometry;
-//   geometry.computeBoundingBox();
-//   var center = new THREE.Vector3();
-//   geometry.boundingBox.getCenter( center );
-//   mesh.localToWorld( center );
+AFRAME.registerComponent('getCenterPoint',{ 
+
+  init: function () {
+
+var el = this.el;
+   // el.setAttribute('dynamic-body','');
+
+  const geometry = mesh.geometry;
+  geometry.computeBoundingBox();
+  var center = new THREE.Vector3();
+  geometry.boundingBox.getCenter(center);
+  mesh.localToWorld(center);
   
-//   return center;
-// }
-
-// getCenterPoint(mesh);
 
 
+  
+
+  return center;
+}
+});
+
+
+
+//getCenterPoint(mesh);
+
+// let center = new THREE.Vector3(); 
+// geometry.boundingBox.getCenter(center);
 
 
 
@@ -78,24 +92,33 @@ AFRAME.registerComponent('collect-disappear', {
   //   color: {default: 'red'}
   // },
 
+
+
   init: function () {
     
+   
+
     var el = this.el;  // <a-box>
     // var defaultColor = el.getAttribute('material').color;
+
+   
 
 
 
     var ringSound = document.getElementById('ringSound');
 
     el.addEventListener('collide', function () {
-      el.setAttribute('scale', '0 0 0');
-      //el.remove();
+
+      ringSound.play();
+
+     // el.setAttribute('scale', '0 0 0');
+      el.remove();
      
       console.log('collect disappear fired');
       count +=1;
       button.innerHTML = "Score: " + count;
 
-      ringSound.play();
+     
 
 
 
@@ -217,7 +240,7 @@ AFRAME.registerComponent('collect-disappear', {
 
             // quaternion.getCenter(position);
 
-
+           
 
         
             return function () {
@@ -225,7 +248,7 @@ AFRAME.registerComponent('collect-disappear', {
               this.el.object3D.getWorldQuaternion(quaternion);
           
               
-
+              
           
    
           
@@ -794,12 +817,13 @@ AFRAME.registerComponent('collect-disappear', {
       }
       
 
-
+    
 
       
       
       //THE TRASH CAN LOCATIONS
       function staticLoadPlacesTrash() {
+       
         return [
             // {location: {lat: 39.484604,  lng: -105.074975,},},
             // {location: {lat: 39.484071, lng: -105.075172,},},
@@ -929,17 +953,48 @@ AFRAME.registerComponent('collect-disappear', {
 {location: {lat: 39.745734981795046,  lng:  -104.83853703086294},},
 {location: {lat: 39.746075631066105,  lng:  -104.83853956274321},},
 {location: {lat: 39.74646299625668,  lng:  -104.83858260173665},},
+
+
+//Mom's house
+
+{location: {lat: 42.7790852772978, lng: -89.30102827967337  },},
+{location: {lat: 42.77907346797482, lng: -89.30028261262501 },},
+{location: {lat: 42.77907740421812, lng: -89.29960668446579 },},
+{location: {lat: 42.77877815657607, lng: -89.29918825753333 },},
+{location: {lat: 42.77848284921689, lng: -89.29919362681336 },},
+{location: {lat: 42.777990670290066, lng: -89.29917754135133 },},
+{location: {lat: 42.77780955155296, lng: -89.29963351811278 },},
+{location: {lat: 42.77780955278626, lng: -89.30019141536265 },},
+{location: {lat: 42.77779773868141, lng: -89.30080295648823 },},
+{location: {lat: 42.778075200107274, lng: -89.30121363687391 },},
+{location: {lat: 42.778429568193694, lng: -89.30126192351594 },},
+{location: {lat: 42.77883512351902,  lng: -89.30126193154248 },},
+
+//Zachs house milton
+
+{location: {lat: 42.78208092489371,  lng: -88.96234782062457 },},
+{location: {lat: 42.78187520577049,  lng: -88.96178723765507 },},
+{location: {lat: 42.781556487074205,  lng: -88.9620067130236 },},
+{location: {lat: 42.78133403517076,  lng: -88.96217301515348 },},
+{location: {lat: 42.7810741796072,  lng: -88.96235540962081 },},
+{location: {lat: 42.780753296884235,  lng: -88.96256730710286 },},
+{location: {lat: 42.78077101646239,  lng: -88.96331563789684 },},
+{location: {lat: 42.78111158659394,  lng: -88.96306887559925 },},
+{location: {lat: 42.781391129243964,  lng: -88.96286770865089 },},
+{location: {lat: 42.78172972990168,  lng: -88.96262094120564 },},
       
                ];
+               
+                 
                }
-          
+           
            
       //RENDER THE SECOND(CU) BUSINESS' 3D MODEL OR LOGO - AND SET THE OBJECTS ATTRIBUTES
        function renderPlacesTrash(placesTrash) {
-    
+        
      
         let sceneTrash = document.querySelector('a-scene');
-
+        
 
           placesTrash.forEach((placeTrash) => {
        
@@ -947,9 +1002,11 @@ AFRAME.registerComponent('collect-disappear', {
             let latitudeTrash = placeTrash.location.lat;
             let longitudeTrash = placeTrash.location.lng;
           
+            
 
               let modelTrash = document.createElement('a-entity');
 
+              
               
              
               let p = location.lat + latitudeTrash;
@@ -966,26 +1023,23 @@ AFRAME.registerComponent('collect-disappear', {
           
                  //allows to rotate
             modelTrash.setAttribute('animation', 'property: rotation; to: 0 360 0; loop:true; dur: 4000; easing: linear');
-            modelTrash.setAttribute('kinematic-body','');
-         //   modelTrash.setAttribute('static-body','');
+            
+           
+           modelTrash.setAttribute('static-body','');
+            //modelTrash.setAttribute('dynamic-body','');
+           //modelTrash.setAttribute('kinematic-body','');
+
+
+      
+           
 
 
 
             modelTrash.addEventListener('loaded', () => {
 
+             
 
-
-              // function getCenterPoint(mesh) {
-              //   var geometry = mesh.geometry;
-              //   geometry.computeBoundingBox();
-              //   var center = new THREE.Vector3();
-              //   geometry.boundingBox.getCenter( center );
-              //   mesh.localToWorld( center );
-                
-              //   return center;
-              // }
               
-              // getCenterPoint(modelTrash);
               
   
 
@@ -1040,56 +1094,39 @@ AFRAME.registerComponent('collect-disappear', {
 //Collision
 
 
-// modelTrash.onIntersection = AFRAME.utils.bind(this.onIntersection, this);
-// modelTrash.addEventListener('raycaster-intersection', this.onIntersection);
-
-       //removes model when clicked
-      //  modelTrash.addEventListener('click', () => {
-      //     modelTrash.remove();
-      //    //window.open("https://www.starbucks.com/menu?_branch_match_id=713537451166389183", "Starbucks Order");
-      //    document.getElementById("trashPopup").style.display ="unset";
-      
-      //       });
-       
-    
 
 
-      
-     // modelTrash.addEventListener('collide', 'hideTrash');
+// function getCenterPoint(mesh) {
+//    var geometry = mesh.geometry;
+//   geometry.computeBoundingBox();
+//   var center = new THREE.Vector3();  
+//   geometry.boundingBox.getCenter( center );
+//   mesh.localToWorld( center );
+  
+//   return center;
+// }
+
+//  getCenterPoint(modelTrash);
 
 
- 
 
 
-    
-   
         
         
-    
-      
-    //  modelTrash.setAttribute('dynamic-body');
-   //  modelTrash.setAttribute('change-color-on-hover');
-      //removes model when clicked
-    // AFRAME.registerComponent('collect-disappear', {})
-    //   modelTrash.addEventListener('click', () => {
-    //   //  modelTrash.remove();
-    //     modelTrash.setAttribute('scale', '10 10 10');
-    //   });
-
    
-
-
+   
 
 
 ////////////////////////////
 //modelTrash.setAttribute('dynamic-body','');
 
     modelTrash.setAttribute('collect-disappear', '');
+   modelTrash.setAttribute('getCenterPoint', '');
   
     //modelTrash.setAttribute('dynamic-body','');
 
 
-    // modelTrash.setAttribute('kinematic-body','');
+  //   modelTrash.setAttribute('kinematic-body','');
 
  // modelTrash.getCenter('dynamic-body','');
  
@@ -1130,7 +1167,7 @@ AFRAME.registerComponent('collect-disappear', {
 
 
 
-   
+
 
 
 
@@ -1140,7 +1177,7 @@ AFRAME.registerComponent('collect-disappear', {
 sceneTrash.appendChild(modelTrash);
          
 //var target = new THREE.Vector3();
-               
+
            
 //this.getCenter(target); 
 
@@ -1157,34 +1194,14 @@ sceneTrash.appendChild(modelTrash);
 // count+=1;
 //             };
       ////////////////////
-      
-      
 
+        }         
 
-
-
-
-
-
-
-      
-      
-      ////////////////////////
-      
-      
-
-        }    
-       
-        )
-        
-        
-        ;
-  
-   
-       
+        )  ;
+          
        }
       
-      
+    
       
       
       
